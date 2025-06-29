@@ -29,14 +29,9 @@
 		kdeApplications.okular
 	];
 
-	# KDE Plasma DE
 	programs.neovim = {
 		enable = true;
 		defaultEditor = true;
-	};
-
-	programs.steam = {
-		enable = true;
 	};
 
 	programs.zsh.enable = true;
