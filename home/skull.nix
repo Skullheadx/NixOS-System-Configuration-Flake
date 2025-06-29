@@ -1,8 +1,8 @@
 { config, pkgs, ...}:
 
 {
-#	home.username = "skull";
-#	home.homeDirectory = "/home/skull";
+	home.username = "skull";
+	home.homeDirectory = "/home/skull";
 
 	# User Account
 	home-manager.users.skull = {
