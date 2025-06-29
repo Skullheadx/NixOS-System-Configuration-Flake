@@ -14,7 +14,8 @@
 	username = "skull";
 in {
   	nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-		inherit system;
+		specialArgs = { inherit system; };
+
 		modules = [
 			./hosts/${hostname}/configuration.nix
 			./hosts/${hostname}/hardware-configuration.nix
