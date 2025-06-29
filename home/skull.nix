@@ -23,9 +23,6 @@
 		theme = "Breeze Dark";
 		icons = "Breeze";
 	};
-	environment.variables = {
-		GTK_THEME = "Adwaita:dark";
-	};
 	programs.sway = {
 		enable = false;
 	};
