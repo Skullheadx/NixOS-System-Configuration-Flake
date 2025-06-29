@@ -85,7 +85,7 @@
 
 #Enable Flakes
 nix.settings.experimental-features=[ "nix-command" "flakes" ];
-home-manager.users.skull = import ./../../home/skull.nix;
+import ./../../home/skull.nix;
 # programs.mtr.enable = true;
   # programs.gnupg.agent = {
   #   enable = true;
