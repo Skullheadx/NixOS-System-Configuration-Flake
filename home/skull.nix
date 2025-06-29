@@ -22,8 +22,8 @@
 		git
 		github-desktop
 		obsidian
+		steam
 		plasma6Packages.plasma-desktop
-
 		kdeApplications.kate
 		kdeApplications.dolphin
 		kdeApplications.okular
