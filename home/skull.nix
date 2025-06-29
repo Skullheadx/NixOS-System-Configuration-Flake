@@ -15,7 +15,6 @@
 		git
 		github-desktop
 		obsidian
-		steam
 	];
 
 	programs.zsh.enable = true;
