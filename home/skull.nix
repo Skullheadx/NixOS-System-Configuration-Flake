@@ -22,7 +22,7 @@
 		git
 		github-desktop
 		obsidian
-		plasma6Packages.plasa-desktop
+		plasma6Packages.plasma-desktop
 
 		kdeApplications.kate
 		kdeApplications.dolphin
@@ -31,14 +31,6 @@
 
 	# KDE Plasma DE
 
-	programs.plasma = {
-		enable = true;
-		theme = "Breeze Dark";
-		icons = "Breeze";
-	};
-	programs.sway = {
-		enable = false;
-	};
 
 	programs.neovim = {
 		enable = true;
