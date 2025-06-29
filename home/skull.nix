@@ -30,8 +30,6 @@
 	];
 
 	# KDE Plasma DE
-
-
 	programs.neovim = {
 		enable = true;
 		defaultEditor = true;
