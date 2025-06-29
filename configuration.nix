@@ -25,6 +25,12 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  ];
+
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
