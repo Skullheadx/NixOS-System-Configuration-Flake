@@ -9,6 +9,7 @@
 		isNormalUser = true;
 		description = "Andrew";
 		extraGroups = [ "networkmanager" "wheel" ];
+		password = "123";
 	};
 
 	home.packages = with pkgs; [
