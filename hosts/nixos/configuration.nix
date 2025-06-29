@@ -3,32 +3,23 @@
 {
   imports = [];
 
-  # Bootloader.
+  # Bootloader and Kernel
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
+	
+  # Disk encryption (LUKS)
   boot.initrd.luks.devices."luks-d764e3a8-8821-4e5a-a1aa-7247d7f8e719".device = "/dev/disk/by-uuid/d764e3a8-8821-4e5a-a1aa-7247d7f8e719";
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Enable networking
+  # Network Config
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-  ];
 
-  # Set your time zone.
+  # Timezone and Localization 
   time.timeZone = "America/Toronto";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_CA.UTF-8";
     LC_IDENTIFICATION = "en_CA.UTF-8";
@@ -40,14 +31,22 @@
     LC_TELEPHONE = "en_CA.UTF-8";
     LC_TIME = "en_CA.UTF-8";
   };
+	
+  # Enable Dynamic Libraries
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  ];
+
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   # services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -77,13 +76,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.skull = {
-    isNormalUser = true;
-    description = "Andrew";
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
-
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "skull";
@@ -95,36 +87,7 @@
 #Enable Flakes
 nix.settings.experimental-features=[ "nix-command" "flakes" ];
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-     neovim 
-     wget
-     neofetch
-     brave
-     cowsay
-     ghostty
-     discord
-     git
-     github-desktop
-     obsidian
-  ];
-
-  programs.neovim = {
-  	enable = true;
-	defaultEditor = true;
-  };
-
-  programs.steam = {
-  	enable = true;
-
-  };
-
-  programs.firefox.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
+# programs.mtr.enable = true;
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
