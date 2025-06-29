@@ -24,13 +24,13 @@
 		icons = "Breeze";
 	};
 	environment.variables = {
-		GTK_THEME = "Adwaita:dark":
+		GTK_THEME = "Adwaita:dark";
 	};
 	programs.sway = {
 		enable = false;
 	};
 	
-	environment.systemPackages = with pkgs; [
+	home.packages = with pkgs; [
 		neovim
 		wget
 		neofetch
