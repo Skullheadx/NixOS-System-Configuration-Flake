@@ -4,12 +4,6 @@
 	home.username = "skull";
 	home.homeDirectory = "/home/skull";
 
-	# User Account
-	isNormalUser = true;
-	description = "Andrew";
-	extraGroups = [ "networkmanager" "wheel" ];
-	password = "123";
-
 	home.packages = with pkgs; [
 		neovim
 		wget
@@ -22,16 +16,7 @@
 		github-desktop
 		obsidian
 		steam
-		plasma6Packages.plasma-desktop
-		kdeApplications.kate
-		kdeApplications.dolphin
-		kdeApplications.okular
 	];
-
-	programs.neovim = {
-		enable = true;
-		defaultEditor = true;
-	};
 
 	programs.zsh.enable = true;
 	programs.git.enable = true;

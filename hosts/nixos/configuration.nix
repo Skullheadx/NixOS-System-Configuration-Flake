@@ -2,6 +2,12 @@
 
 {
   imports = [];
+  users.users.skull = {
+	isNormalUser = true;
+	extraGroups = [ "networkmanager" "wheel" ];
+	password = "123";
+  };
+
   home-manager.users.skull = import ../../home/skull.nix;
 
 
