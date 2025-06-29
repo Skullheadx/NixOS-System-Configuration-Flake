@@ -5,7 +5,7 @@
 	home.homeDirectory = "/home/skull";
 
 	# User Account
-	users.users.skull = {
+	home-manager.users.skull = {
 		isNormalUser = true;
 		description = "Andrew";
 		extraGroups = [ "networkmanager" "wheel" ];
