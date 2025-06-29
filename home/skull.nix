@@ -22,16 +22,14 @@
 		git
 		github-desktop
 		obsidian
-		kde5.plasma-desktop
-		pkgs.kde5.kate
-		pkgs.kde5.okular
+		plasma6Packages.plasa-desktop
+
+		kdeApplications.kate
+		kdeApplications.dolphin
+		kdeApplications.okular
 	];
 
 	# KDE Plasma DE
-	programs.kdeApplications = {
-		enable = true;
-		package = kdeApplications.full;
-	};
 
 	programs.plasma = {
 		enable = true;
