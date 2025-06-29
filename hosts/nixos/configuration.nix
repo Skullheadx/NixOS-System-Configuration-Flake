@@ -2,6 +2,8 @@
 
 {
   imports = [];
+  home-manager.users.skull = import ../../home/skull.nix;
+
 
   # Bootloader and Kernel
   boot.loader.systemd-boot.enable = true;
@@ -85,7 +87,6 @@
 
 #Enable Flakes
 nix.settings.experimental-features=[ "nix-command" "flakes" ];
-import ./../../home/skull.nix;
 # programs.mtr.enable = true;
   # programs.gnupg.agent = {
   #   enable = true;

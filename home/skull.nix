@@ -5,12 +5,10 @@
 	home.homeDirectory = "/home/skull";
 
 	# User Account
-	home-manager.users.skull = {
-		isNormalUser = true;
-		description = "Andrew";
-		extraGroups = [ "networkmanager" "wheel" ];
-		password = "123";
-	};
+	isNormalUser = true;
+	description = "Andrew";
+	extraGroups = [ "networkmanager" "wheel" ];
+	password = "123";
 
 	home.packages = with pkgs; [
 		neovim
