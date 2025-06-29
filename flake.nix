@@ -7,12 +7,24 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {nixpkgs, ... } @ inputs:
-  {
-  	nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-		specialArgs = { inherit inputs; };
+  outputs = {self, nixpkgs, home-manager, ... }:
+  let
+  	system = "x86_64-linux";
+	hostname = "nixos";
+	username = "skull";
+in {
+  	nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+		inherit system;
 		modules = [
-			./configuration.nix
+			./hosts/${hostname}/configuration.nix
+			./hosts/${hostname}/hardware-configuration.nix
+
+		home-manager.nixosModules.home-manager
+		{
+			home-manager.useGlobalPkgs = true;
+			home-manager.useUserPackages = true;
+			home-manager.users.${username} = import ./home/${username}.nix;
+		}
 		];
 	};
 

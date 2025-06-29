@@ -1,15 +1,7 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { pkgs, lib, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -19,7 +11,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.initrd.luks.devices."luks-d764e3a8-8821-4e5a-a1aa-7247d7f8e719".device = "/dev/disk/by-uuid/d764e3a8-8821-4e5a-a1aa-7247d7f8e719";
-	networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
@@ -90,10 +82,6 @@
     isNormalUser = true;
     description = "Andrew";
     extraGroups = [ "networkmanager" "wheel" ];
-    #packages = with pkgs; [
-    #  kdePackages.kate
-    #  thunderbird
-    #];
   };
 
   # Enable automatic login for the user.
@@ -120,7 +108,6 @@ nix.settings.experimental-features=[ "nix-command" "flakes" ];
      git
      github-desktop
      obsidian
-     git
   ];
 
   programs.neovim = {
