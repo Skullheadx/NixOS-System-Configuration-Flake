@@ -11,6 +11,19 @@
 		extraGroups = [ "networkmanager" "wheel" ];
 	};
 
+	home.packages = with pkgs; [
+		neovim
+		wget
+		neofetch
+		brave
+		firefox
+		ghostty
+		discord
+		git
+		github-desktop
+		obsidian
+		kdeApplications
+	];
 
 	# KDE Plasma DE
 	programs.kdeApplications = {
@@ -26,19 +39,6 @@
 	programs.sway = {
 		enable = false;
 	};
-	
-	home.packages = with pkgs; [
-		neovim
-		wget
-		neofetch
-		brave
-		firefox
-		ghostty
-		discord
-		git
-		github-desktop
-		obsidian
-	];
 
 	programs.neovim = {
 		enable = true;
