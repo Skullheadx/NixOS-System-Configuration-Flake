@@ -22,7 +22,9 @@
 		git
 		github-desktop
 		obsidian
-		kdeApplications
+		kde5.plasma-desktop
+		pkgs.kde5.kate
+		pkgs.kde5.okular
 	];
 
 	# KDE Plasma DE
