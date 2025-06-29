@@ -12,9 +12,8 @@
   boot.initrd.luks.devices."luks-d764e3a8-8821-4e5a-a1aa-7247d7f8e719".device = "/dev/disk/by-uuid/d764e3a8-8821-4e5a-a1aa-7247d7f8e719";
 
   # Network Config
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  networking.hostName = "nixos";
 
 
   # Timezone and Localization 
