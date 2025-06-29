@@ -28,7 +28,7 @@
 	# KDE Plasma DE
 	programs.kdeApplications = {
 		enable = true;
-		package = pkgs.kdeApplications.full;
+		package = kdeApplications.full;
 	};
 
 	programs.plasma = {
